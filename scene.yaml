@@ -61,7 +61,7 @@ layers:
                     width: .5px
     roads:
         data: { source: osm }
-        filter: { not: { kind: ocean} }
+        filter: { not: { kind: ferry } }
         draw:
             lines:
                 order: 3
