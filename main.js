@@ -190,7 +190,3 @@ function exportCanvas() {
       '_blank' // <- This is what makes it open in a new window.
     );
 }
-
-function hidePicker() {
-    document.getElementById('picker').jscolor.hide();
-}

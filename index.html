@@ -85,6 +85,9 @@
         // http://stackoverflow.com/a/10073788/738675
         n = n.length >= 6 ? n : new Array(6 - n.length + 1).join('0') + n;
         document.getElementById("picker").value = n;
+        function hidePicker() {
+            document.getElementById('picker').jscolor.hide();
+        }
         </script>
         <button class="kbutton" onclick="exportCanvas()">SAVE</button>
         <button class="kbutton" onclick="clearCanvas();updateMap();">RESET</button>
