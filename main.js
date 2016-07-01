@@ -144,7 +144,7 @@ updateColor(document.getElementById("picker").value);
 // fill canvas with white
 function clearCanvas() {
     ctx.beginPath();
-    ctx.rect(0, 0, 256, 256);
+    ctx.rect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "white";
     ctx.fill();
 }
