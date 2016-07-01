@@ -78,7 +78,7 @@
         <canvas id="kcanvas" height="256" width="256" style="border:1px #000 solid;" onmouseover="hidePicker()"></canvas>
         <script src="lib/jscolor.min.js"></script>
         <br>
-        <input id="picker" class="jscolor" value="ab2567" onmouseover="this.jscolor.show();" onchange="updateColor(this.value);"><br>
+        <input id="picker" class="jscolor" value="ab5127" onmouseover="this.jscolor.show();" onchange="updateColor(this.value);"><br>
         <script>
         // http://www.paulirish.com/2009/random-hex-color-code-snippets/
         var n = Math.floor(Math.random()*16777215).toString(16);
@@ -86,7 +86,7 @@
         n = n.length >= 6 ? n : new Array(6 - n.length + 1).join('0') + n;
         document.getElementById("picker").value = n;
         function hidePicker() {
-            document.getElementById('picker').jscolor.hide();
+            if (typeof document.getElementById('picker').jscolor != 'undefined') document.getElementById('picker').jscolor.hide();
         }
         </script>
         <button class="kbutton" onclick="exportCanvas()">SAVE</button>
