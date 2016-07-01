@@ -62,7 +62,7 @@ var lastX;
 var lastY;
 var colorHex = "ffffff";
 var color = {r: 100, g: 100, b: 100};
-var alpha = .015;
+var alpha = .02;
 
 function updateColor(val) {
     valRGB = hexToRgb(val);
@@ -73,20 +73,6 @@ function setColor(val) {
     document.getElementById('picker').jscolor.fromString(val);
     updateColor(val);
 }
-function updateWidth(val) {
-    w = val;
-    document.getElementById("width").value = val;
-}
-function updateAlpha(val) {
-    alpha = val;
-    document.getElementById("alpha").value = val;
-}
-function updateScale(val) {
-    scene.styles.hillshade.shaders.uniforms.u_scale = parseFloat(1/(Math.pow(2,val)-1));
-    scene.requestRedraw();
-    document.getElementById("scale").value = val;
-}
-
 function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
