@@ -31,8 +31,7 @@
         #kinkade {
             font-size: 20px;
             position: absolute;
-            right: 0;
-            border: 0px solid gold;
+            right: 6px;
             z-index: 1000;
             background: white;
             padding: 4px 0 4px 4px;
@@ -63,6 +62,7 @@
         }
         #picker {
             width: 250px;
+            font-size: 15px;
         }
         .kbutton {
             font-size: 15px;
@@ -75,10 +75,10 @@
   <body>
     <div id="kinkade">
         <img id="reticle" src="reticle.png">
-        <canvas id="kcanvas" height="256" width="256" style="border:1px #000 solid;"></canvas>
+        <canvas id="kcanvas" height="256" width="256" style="border:1px #000 solid;" onmouseover="hidePicker()"></canvas>
         <script src="lib/jscolor.min.js"></script>
         <br>
-        <input id="picker" class="jscolor" value="ab2567" onchange="updateColor(this.value);this.jscolor.hide();"><br>
+        <input id="picker" class="jscolor" value="ab2567" onmouseover="this.jscolor.show();" onchange="updateColor(this.value);"><br>
         <script>
         // http://www.paulirish.com/2009/random-hex-color-code-snippets/
         var n = Math.floor(Math.random()*16777215).toString(16);
@@ -86,12 +86,12 @@
         n = n.length >= 6 ? n : new Array(6 - n.length + 1).join('0') + n;
         document.getElementById("picker").value = n;
         </script>
-        <button class="kbutton" onclick="exportCanvas()">SAVE SPHEREMAP</button>
+        <button class="kbutton" onclick="exportCanvas()">SAVE</button>
         <button class="kbutton" onclick="clearCanvas();updateMap();">RESET</button>
 
     </div>
 
-    <div id="map"></div>
+    <div id="map" onmouseover="hidePicker()"></div>
 
     <!-- 3rd party libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.js"></script>
