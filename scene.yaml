@@ -1,7 +1,7 @@
 sources:
     osm: 
         type: TopoJSON
-        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson?api_key=vector-tiles-JUsa0Gc
+        url: https://tile.dev.mapzen.com/mapzen/vector/v1/all/{z}/{x}/{y}.topojson
         max_zoom: 16
         rasters: [normals]
     normals:
@@ -13,7 +13,6 @@ scene:
         color: white
 textures:
     spheremap:
-        # url: spheremap.png
         element: "#kcanvas"
 
 styles: 
