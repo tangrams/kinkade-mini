@@ -42,14 +42,17 @@ styles:
 layers:
     earth:
         data: { source: osm }
-        filter: {boundary: true}
-        draw:
-            hillshade:
-                order: 0
-            lines:
-                order: 2
-                color: [.3, .3, .3]
-                width: 1px
+        terrain:
+            draw:
+                hillshade:
+                    order: 0
+        lines:
+            filter: {boundary: true}
+            draw:
+                lines:
+                    order: 2
+                    color: [.3, .3, .3]
+                    width: 1px
     water:
         data: { source: osm }
         not-ocean:
